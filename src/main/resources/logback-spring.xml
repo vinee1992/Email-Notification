@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="LOG_HOME"
+		value="/data/Application/logs/Integration/EmailNotification/" />
+
+	<!-- property name="LOG_HOME" value="J:/data/Application/logs/extraction/" 
+		/ -->
+	<springProperty scope="context" name="serverName"
+		source="HOSTNAME" />
+	<property name="AppName" value="integration" /><!-- mention your 
+		application name -->
+
+	<appender name="SDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss}${serverName:-${HOSTNAME}} [%thread]
+				%-5level %logger{36}.%M\(%line\) - %msg%n</pattern>
+		</layout>
+	</appender>
+
+	<appender name="INFOAPPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}${AppName}_info.log</file>
+		<encoder
+			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<charset>UTF-8</charset>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} ${serverName:-${HOSTNAME}} [%thread]
+				%-5level %logger{36}.%M\(%line\)- %msg%n</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${LOG_HOME}${AppName}_info.%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<!-- keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+	</appender>
+	<appender name="ERRORAPPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}${AppName}_error.log</file>
+		<encoder
+			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<charset>UTF-8</charset>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} ${serverName:-${HOSTNAME}} [%thread]
+				%-5level %logger{36}.%M\(%line\)- %msg%n</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${LOG_HOME}${AppName}_error.%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<!-- keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+	</appender>
+
+	<appender name="DEBUGAPPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}${AppName}_debug.log</file>
+		<encoder
+			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<charset>UTF-8</charset>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} ${serverName:-${HOSTNAME}} [%thread]
+				%-5level %logger{36}.%M\(%line\)- %msg%n</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>DEBUG</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${LOG_HOME}${AppName}_debug.%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<!-- keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+	</appender>
+
+	<appender name="TRACEAPPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}${AppName}_trace.log</file>
+		<encoder
+			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<charset>UTF-8</charset>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} ${serverName:-${HOSTNAME}} [%thread]
+				%-5level %logger{36}.%M\(%line\)- %msg%n</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>TRACE</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${LOG_HOME}${AppName}_trace.%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<!-- keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+	</appender>
+
+	<!-- Start- Off the logging below packages -->
+	<logger name="org.springframework.*" level="OFF"
+		additivity="false" />
+	<logger name="org.hibernate.*" level="OFF" additivity="false" />
+	<logger name="org.*" level="OFF" additivity="false" />
+	<!-- End- Off the logging below packages -->
+
+
+	<springProfile name="dev,qa">
+		<logger name="com.mckesson.integration.notification" level="TRACE" additivity="false">
+			<appender-ref ref="TRACEAPPENDER" />
+			<appender-ref ref="SDOUT" />
+		</logger>
+		<logger name="com.mckesson.integration.notification" level="ERROR" additivity="false">
+			<appender-ref ref="ERRORAPPENDER" />
+			<appender-ref ref="SDOUT" />
+
+		</logger>
+		<logger name="com.mckesson.integration.notification" level="INFO" additivity="false">
+			<appender-ref ref="INFOAPPENDER" />
+			<appender-ref ref="SDOUT" />
+
+		</logger>
+		<logger name="com.mckesson.integration.notification" level="DEBUG" additivity="false">
+			<appender-ref ref="DEBUGAPPENDER" />
+			<appender-ref ref="SDOUT" />
+
+		</logger>
+	</springProfile>
+	<springProfile name="uat,prod">
+		<logger name="com.mckesson.integration.notification" level="ERROR" additivity="false">
+			<appender-ref ref="ERRORAPPENDER" />
+		</logger>
+		<logger name="com.mckesson.integration.notification" level="INFO" additivity="false">
+			<appender-ref ref="INFOAPPENDER" />
+		</logger>
+	</springProfile>
+</configuration>

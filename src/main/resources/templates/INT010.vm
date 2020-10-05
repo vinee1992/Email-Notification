@@ -1,0 +1,13 @@
+<html>
+   <body>
+Hi,<br/>
+
+Thank you for choosing McKesson.<br><br>
+
+<br>No Items were received for the following Contract ID: ${supplierContractId}. Please provide the missing item information by populating the item details in the attached template.<br>
+Please note that per our supply agreement, all contracts should be provided ${supplierSla} day(s) prior to their effective date. Failing to do so may result in pricing delays, and any resulting chargebacks should be honored.<br>
+
+Thanks!
+      
+</body>
+</html>

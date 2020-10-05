@@ -1,0 +1,17 @@
+<assembly>
+	<id>Properties</id>
+	<baseDirectory>templates</baseDirectory>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<fileSets>
+		<fileSet>
+			<directory>src/main/resources/templates</directory>
+			<outputDirectory>integration/email-notification</outputDirectory>
+			<includes>
+			<include>*.vm</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+</assembly>

@@ -1,0 +1,25 @@
+<html>
+   <body>
+      Hi Team, <br><br>
+      Below listed file(s) are not received by CCA.<br>
+      Process: Integration<br>
+      Date_Time: ${insertTime} <br>
+      
+      
+      
+      #set ($map = $jobNameWithFile )
+      #foreach ($mapEntry in $map.entrySet())
+      <br>
+      Job Name: $mapEntry.key
+         #foreach ($path in $mapEntry.value)
+                <b>$path </b> <br/>
+         #end
+      #end
+      <br><br>
+      Thanks,<br>
+      CCA Team
+      <br>
+      <br>
+      <b>NOTE:</b> This is the system generated email. Please do not reply to this email. In case of any issue please contact to support team.
+   </body>
+</html>

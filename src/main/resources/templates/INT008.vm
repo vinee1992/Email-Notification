@@ -1,0 +1,19 @@
+<html>
+   <body>
+      Hi Team, <br><br>
+      BR received below listed file(s) with missing information.<br>
+      Process: Integration<br>
+      Date_Time: ${insertTime}<br>
+	  
+Hi,
+
+Thank you for choosing McKesson. 
+
+This is the second reminder to provide the missing contract information (highlighted in yellow) in the attached template.
+
+Please note that per our supply agreement, all contracts should be provided (dynamic days based on supplier SLA) prior to their effective date. Failing to do so may result in pricing delays, and any resulting chargebacks should be honored.
+
+Thanks!
+      
+   </body>
+</html>

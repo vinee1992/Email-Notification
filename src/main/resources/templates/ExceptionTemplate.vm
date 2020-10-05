@@ -1,0 +1,14 @@
+<html>
+   <body>
+      Hi Team, <br><br>
+Exception occured while triggering email notification. Below is the exception stack.<br>
+<b>Exception Message : ${exceptionMessage} </b> <br>
+<b> Exception Description : ${exceptionDesc} </b>
+      <br><br>
+      Thanks,<br>
+      CCA Team
+      <br>
+      <br>
+      <b>NOTE:</b> This is the system generated email. Please do not reply to this email. In case of any issue please contact to support team.
+   </body>
+</html>

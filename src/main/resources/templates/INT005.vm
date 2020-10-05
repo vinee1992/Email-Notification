@@ -1,0 +1,34 @@
+<html>
+
+   <body>
+ 	Hi Team,</br>
+ 	We have processed MedSurg File received on ${insertTime}
+ 	</br>
+	</br>
+
+ 	Process : Integration
+
+ 	</br>
+ 	</br>
+ 	 	<b>Please find statistics for same below</b>
+ 	</br>
+ 	</br>
+	${statitics}
+	</br>
+   </body>
+   
+   </br>
+   </br>
+   </br>
+ </html>
+ 
+ 
+Thanks,<br>
+
+CCA Team
+ <br>
+      <br>
+      <b>NOTE:</b> This is the system generated email. Please do not reply to this email. In case of any issue please contact to support team.
+
+
+	

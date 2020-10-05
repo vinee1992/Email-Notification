@@ -1,0 +1,29 @@
+<html>
+
+   <body>
+ 	Hi Team,</br>
+ 	We processed the file(s) received ,however there are exceptions on record(s). <br>Providing herewith a link to access the  exception logs from file server.</br>
+ 	Process : Integration<br>
+ 	Date_Time : ${insertTime}<br>
+ 	
+
+      
+      #set ($map = $jobName)
+      #foreach ($mapEntry in $map.entrySet())
+      <br>
+      Job Name: $mapEntry.key
+         #foreach ($path in $mapEntry.value)
+                <b>$path</b> <br/>
+         #end
+      #end
+
+  <br><br>
+      Thanks,<br>
+      CCA Team
+      <br>
+      <br>
+      <b>NOTE:</b> This is the system generated email. Please do not reply to this email. In case of any issue please contact to support team.
+   </body> 
+</html>
+
+	

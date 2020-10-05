@@ -1,0 +1,23 @@
+<html>
+
+   <body>
+ 	Hi Team,</br></br>
+ 	${message}
+ 	</br>
+	</br>
+
+ 	Process : Integration - ${applicationName}
+
+
+   </body>
+   
+   </br>
+   </br>
+   </br>
+
+ 
+ 
+Thanks</br>
+CCA Team
+ </html>
+
